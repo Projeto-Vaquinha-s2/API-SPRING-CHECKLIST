@@ -10,7 +10,3 @@ create table detalhes_edificio(
 
     primary key (id)
 )
-
-alter table detalhes_edificio
-add constraint fk_edificio
-foreign key (edificio_id) references edificio(id);
