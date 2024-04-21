@@ -14,11 +14,11 @@ public class DetalhesEdificioModel implements Serializable {
     private long id;
     private EdificioModel edificio;
     private String nome_do_andar;
-    private int quantidade_de_andares = 10;
-    private int quantidade_de_garagens = 2;
-    private int quantidade_de_salao_de_festa = 1;
-    private int quantidade_de_guaritas = 3;
-    private int quantidade_de_terraços = 1;
+    private int quantidade_de_andares;
+    private int quantidade_de_garagens;
+    private int quantidade_de_salao_de_festa;
+    private int quantidade_de_guaritas;
+    private int quantidade_de_terraços;
 
     public long getId() {
         return id;
