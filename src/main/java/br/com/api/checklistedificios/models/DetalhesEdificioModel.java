@@ -1,8 +1,7 @@
 package br.com.api.checklistedificios.models;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
 
 import java.io.Serializable;
 
@@ -12,7 +11,9 @@ public class DetalhesEdificioModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private EdificioModel edificio;
+    @ManyToOne
+    @JoinColumn(name = "edificio_id")
+    private EdificioModel edificioModel;
     private String nome_do_andar;
     private int quantidade_de_andares;
     private int quantidade_de_garagens;
@@ -28,12 +29,12 @@ public class DetalhesEdificioModel implements Serializable {
         this.id = id;
     }
 
-    public EdificioModel getEdificio() {
-        return edificio;
+    public EdificioModel getEdificioModel() {
+        return edificioModel;
     }
 
-    public void setEdificio(EdificioModel edificio) {
-        this.edificio = edificio;
+    public void setEdificioModel(EdificioModel edificioModel) {
+        this.edificioModel = edificioModel;
     }
 
     public String getNome_do_andar() {
@@ -84,3 +85,5 @@ public class DetalhesEdificioModel implements Serializable {
         this.quantidade_de_terraços = quantidade_de_terraços;
     }
 }
+
+
